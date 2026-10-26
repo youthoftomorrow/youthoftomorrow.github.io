@@ -1,0 +1,40 @@
+/* Partners page */
+.partner-list { display: grid; gap: clamp(16px, 2vw, 24px); margin-top: clamp(28px, 4vw, 44px); }
+.partner {
+  scroll-margin-top: calc(var(--header-h) + 24px);
+  border: 2px solid var(--line);
+  display: grid; grid-template-columns: 220px 1fr auto; gap: clamp(28px, 5vw, 72px); align-items: start;
+  background: var(--paper); border-radius: var(--radius-lg); padding: clamp(20px, 3vw, 32px);
+}
+.partner-logo { display: grid; place-items: center; min-height: 150px; border-radius: 18px; background: var(--paper); border: 2px solid var(--line); padding: 22px; transition: border-color .2s; }
+.partner-logo:hover { border-color: var(--sky); }
+.partner-logo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 104px; object-fit: contain; }
+.partner h2 { font-size: var(--step-2); font-weight: 750; margin-bottom: .5em; }
+.partner p { color: var(--ink-soft); max-width: 62ch; }
+.together { margin: 1.2em 0 1.4em; display: grid; gap: 10px; max-width: 62ch; }
+.together div { background: #FFF6EB; border-left: 4px solid var(--sun); padding: 10px 14px; border-radius: 0 10px 10px 0; }
+.together div + div { background: var(--sky-soft); border-left-color: var(--sky); }
+.together dt { font-weight: 700; font-size: var(--step--1); }
+.together dd { margin: .2em 0 0; color: var(--ink); }
+.workshop { margin: 0 0 1.4em; }
+.workshop figcaption { font-weight: 700; font-size: var(--step--1); margin-bottom: 10px; }
+.workshop-photos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-width: 620px; }
+.workshop-photos button { border: 0; padding: 0; border-radius: 12px; overflow: hidden; cursor: zoom-in; background: var(--line); }
+.workshop-photos img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform .35s; }
+.workshop-photos button:hover img, .workshop-photos button:focus-visible img { transform: scale(1.06); }
+.partner-photo { width: 180px; aspect-ratio: 1; object-fit: cover; border-radius: 18px; }
+
+@media (max-width: 960px) {
+  .partner { grid-template-columns: 1fr; }
+  .partner-logo { justify-self: start; width: 220px; }
+  .partner-photo { width: 100%; max-width: 320px; aspect-ratio: 4 / 3; }
+}
+@media (max-width: 520px) { .workshop-photos { grid-template-columns: repeat(3, 1fr); } }
+
+/* Partner with us */
+.partner-cta { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+.partner-cta p { color: #C8D8EA; max-width: 52ch; margin: .8em 0 0; font-size: var(--step-1); line-height: 1.45; }
+.partner-cta .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+
+@media (max-width: 960px) { .partner-cta { grid-template-columns: 1fr; } }

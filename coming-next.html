@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coming next · Youth of Tomorrow</title>
+  <meta name="description" content="New programs Youth of Tomorrow is planning in Iowa City, from art nights and earn-a-bike to a youth advisory council. Pick the ones you'd join.">
+  <meta name="theme-color" content="#0A1A2F">
+  <link rel="icon" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=20261102">
+  <link rel="stylesheet" href="css/coming-next.css?v=20261102">
+</head>
+<body data-page="coming-next">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="hero-sun" aria-hidden="true"></div>
+      <div class="wrap">
+        <a class="crumb" href="programs.html">Programs</a>
+        <h1>What's coming next</h1>
+        <p class="lede">New programs we're planning for the year ahead. Tap “I'd join” on the ones you'd show up for, then send us your picks. The most popular ideas go first.</p>
+      </div>
+    </section>
+
+    <!-- Ideas come from js/data/ideas.js -->
+    <section class="section" aria-labelledby="first-title">
+      <div class="wrap">
+        <h2 id="first-title">Our first picks</h2>
+        <p class="section-lede">Low-cost ideas we can start with volunteers and community partners, and grow from there.</p>
+        <ul class="first-grid" id="first-ideas"></ul>
+      </div>
+    </section>
+
+    <section class="section section-soft" aria-labelledby="ideas-title">
+      <div class="wrap">
+        <div class="ideas-head">
+          <div>
+            <h2 id="ideas-title">More ideas on our list</h2>
+            <p class="section-lede">Grouped by theme. Filter to what interests you.</p>
+          </div>
+          <div class="chips" id="theme-filters" role="group" aria-label="Filter ideas by theme"></div>
+        </div>
+        <ul class="idea-grid" id="ideas"></ul>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div>
+          <h2 id="cta-title">Want a say in what we build?</h2>
+          <p>Join the youth advisory council to help plan activities, or help fund the first new program.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-night" href="join.html?role=youth&amp;ideas=council">Join the youth council</a>
+          <a class="btn btn-line" href="donate.html">Fund what's next</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="tray" id="tray" role="region" aria-label="Your picks" aria-live="polite">
+    <p id="tray-count"></p>
+    <div class="actions">
+      <button class="btn btn-ghost" type="button" id="tray-clear">Clear</button>
+      <a class="btn btn-sun" id="tray-send" href="join.html">Send my picks</a>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="js/data/programs.js?v=20261102"></script>
+  <script src="js/data/ideas.js?v=20261102"></script>
+  <script src="js/site.js?v=20261102"></script>
+  <script src="js/coming-next.js?v=20261102"></script>
+</body>
+</html>

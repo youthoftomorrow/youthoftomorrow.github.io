@@ -1,0 +1,34 @@
+/* Donate page */
+.donate { background: var(--sun); color: var(--night); padding: clamp(72px, 10vw, 130px) 0; position: relative; overflow: hidden; }
+.donate::before { content: ""; position: absolute; left: -12vw; bottom: -30vw; width: 60vw; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(var(--gold), transparent 70%); opacity: .7; pointer-events: none; }
+.donate-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.donate-copy h2 { max-width: 12ch; }
+.donate-copy > p { font-size: var(--step-1); line-height: 1.4; max-width: 34ch; margin: .8em 0 1em; }
+.funds { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; max-width: 40ch; }
+.funds li { padding: 12px 0 12px 30px; border-top: 2px solid rgba(10,26,47,.15); position: relative; font-weight: 500; }
+.funds li::before { content: ""; position: absolute; left: 0; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; background: var(--night); }
+.zelle-card { background: var(--paper); border-radius: var(--radius-lg); padding: clamp(24px, 4vw, 44px); box-shadow: 0 30px 60px -30px rgba(10,26,47,.6); }
+.zelle-card h3 { font-size: var(--step-2); font-weight: 750; font-variation-settings: "wdth" 85; }
+.zelle-sub { color: var(--ink-soft); margin: .4em 0 1.4em; }
+.zelle-email { background: var(--sky-soft); border-radius: 16px; padding: 18px; display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: center; }
+.zelle-label { grid-column: 1; font-size: var(--step--1); color: var(--ink-soft); }
+.zelle-email strong { grid-column: 1; font: 700 clamp(1.05rem, .95rem + .5vw, 1.35rem)/1.25 var(--display); color: var(--sky); overflow-wrap: anywhere; }
+.copy-btn { grid-column: 2; grid-row: 1 / 3; padding: .75em 1.2em; font-size: .95rem; }
+.copy-btn.is-copied { background: #1E9E5A; }
+.zelle-steps { margin: 1.4em 0 0; padding-left: 1.3em; display: grid; gap: 10px; color: var(--ink); }
+.zelle-steps li::marker { color: var(--sun-deep); font-weight: 700; }
+.zelle-note { margin: 1.4em 0 0; padding-top: 1.2em; border-top: 1px solid var(--line); font-size: var(--step--1); color: var(--ink-soft); }
+.zelle-note a { color: var(--sky); font-weight: 600; }
+
+.ways { list-style: none; padding: 0; margin: clamp(32px, 5vw, 52px) 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 40px); }
+.ways li { border-top: 4px solid var(--sky); padding-top: 18px; }
+.ways li:nth-child(2) { border-color: var(--sun); }
+.ways li:nth-child(3) { border-color: var(--gold); }
+.ways h3 { font-size: var(--step-1); font-weight: 700; }
+.ways p { color: var(--ink-soft); margin: .5em 0 .8em; }
+
+@media (max-width: 960px) { .donate-grid { grid-template-columns: 1fr; } .ways { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .zelle-email { grid-template-columns: 1fr; }
+  .copy-btn { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 10px; }
+}

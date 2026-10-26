@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get involved · Youth of Tomorrow</title>
+  <meta name="description" content="Sign up for Youth of Tomorrow programs in Iowa City as a young person, parent or volunteer.">
+  <meta name="theme-color" content="#0A1A2F">
+  <link rel="icon" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=20261102">
+  <link rel="stylesheet" href="css/join.css?v=20261102">
+</head>
+<body data-page="join">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="hero-sun" aria-hidden="true"></div>
+      <div class="wrap">
+        <h1>Get involved</h1>
+        <p class="lede">Whether you're a teen looking for something to do on Saturday, a parent, or someone with a skill to share, there's a place for you.</p>
+      </div>
+    </section>
+
+    <section class="join" aria-labelledby="join-title">
+      <div class="wrap join-grid">
+        <div class="join-copy">
+          <h2 id="join-title">Come be part of tomorrow.</h2>
+          <p>Pick the option that fits you. We'll reach out before the next event.</p>
+          <div class="paths" role="tablist" aria-label="How do you want to get involved?">
+            <button role="tab" class="path is-on" aria-selected="true" data-role="Youth member">
+              <strong>I'm a young person</strong><span>Sign up for game nights, chess and trips.</span>
+            </button>
+            <button role="tab" class="path" aria-selected="false" data-role="Parent">
+              <strong>I'm a parent</strong><span>Get event announcements and enroll your kids.</span>
+            </button>
+            <button role="tab" class="path" aria-selected="false" data-role="Volunteer or mentor">
+              <strong>I want to help</strong><span>Mentor, drive, cook, coach or sponsor an outing.</span>
+            </button>
+          </div>
+          <div class="join-contacts">
+            <h3>Questions? Talk to us</h3>
+            <div data-contacts></div>
+          </div>
+        </div>
+        <form class="join-form" id="join-form" novalidate>
+          <h3 id="form-title">Sign up as a youth member</h3>
+          <input type="hidden" name="role" id="role" value="Youth member">
+          <!-- Spam trap: real people never see or fill this field -->
+          <label class="trap" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+
+          <label>Full name<input name="name" autocomplete="name" required></label>
+          <div class="row">
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+          </div>
+
+          <div class="row" data-for="youth">
+            <label>Age<input name="age" type="number" min="5" max="25" inputmode="numeric" required></label>
+            <label>Parent or guardian name<input name="guardian_name" required></label>
+          </div>
+          <label data-for="youth">Parent or guardian phone<input name="guardian_phone" type="tel" required></label>
+
+          <label data-for="parent">Children's names and ages<input name="children" placeholder="e.g. Amir 12, Sara 14" required></label>
+
+          <!-- Checkboxes are built from js/data/programs.js -->
+          <fieldset class="interests" data-for="youth parent" id="interests">
+            <legend>Interested in <span class="opt">(pick any)</span></legend>
+          </fieldset>
+
+          <label data-for="volunteer">How would you like to help?<input name="help" placeholder="Mentoring, driving, cooking, coaching, sponsoring…" required></label>
+
+          <label><span>Message <span class="opt">(optional)</span></span><textarea name="message" id="message" rows="3" placeholder="Questions, allergies, anything we should know…"></textarea></label>
+
+          <label class="check" data-for="youth"><input type="checkbox" name="guardian_ok" value="Yes" required>My parent or guardian knows I'm signing up.</label>
+
+          <button class="btn btn-sun" type="submit">Send sign-up</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- SUGGESTIONS: saved to the "Suggestions" tab of the Google Sheet (see google-apps-script.gs) -->
+    <section class="suggest" id="suggest" aria-labelledby="suggest-title">
+      <div class="wrap suggest-grid">
+        <div class="suggest-copy">
+          <h2 id="suggest-title">Got an idea? Tell us.</h2>
+          <p>A trip you want to take, a program we should start, or something we could do better. Every suggestion is read by our board.</p>
+          <p class="suggest-note">You don't have to give your name. Add a way to reach you only if you'd like a reply.</p>
+        </div>
+        <form class="suggest-form" id="suggest-form" novalidate>
+          <input type="hidden" name="form" value="suggestion">
+          <label class="trap" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+
+          <fieldset class="from">
+            <legend>I'm…</legend>
+            <label><input type="radio" name="from" value="Young person" checked>A young person</label>
+            <label><input type="radio" name="from" value="Parent">A parent</label>
+            <label><input type="radio" name="from" value="Community member">A community member</label>
+          </fieldset>
+
+          <label>What's it about?
+            <select name="topic">
+              <option>A new program or activity</option>
+              <option>An event or trip</option>
+              <option>Something we could do better</option>
+              <option>Something else</option>
+            </select>
+          </label>
+
+          <label>Your suggestion<textarea name="suggestion" rows="5" required placeholder="Tell us your idea…"></textarea></label>
+
+          <div class="row">
+            <label><span>Name <span class="opt">(optional)</span></span><input name="name" autocomplete="name"></label>
+            <label><span>Email or phone <span class="opt">(optional)</span></span><input name="contact" autocomplete="email"></label>
+          </div>
+
+          <button class="btn btn-night" type="submit">Send suggestion</button>
+          <p class="form-status" id="suggest-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="js/data/programs.js?v=20261102"></script>
+  <script src="js/data/ideas.js?v=20261102"></script>
+  <script src="js/site.js?v=20261102"></script>
+  <script src="js/join.js?v=20261102"></script>
+</body>
+</html>

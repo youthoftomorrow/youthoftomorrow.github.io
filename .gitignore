@@ -1,0 +1,6 @@
+# Original photos and phone videos: kept on this computer only (the site uses assets/)
+images/
+
+# Mac and editor files
+.DS_Store
+.claude/

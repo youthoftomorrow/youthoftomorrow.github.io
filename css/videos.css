@@ -1,0 +1,32 @@
+/* Videos page */
+.clip-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 32px) clamp(14px, 2vw, 24px); }
+.clip-frame {
+  position: relative; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: #000;
+  box-shadow: 0 24px 50px -24px rgba(10,26,47,.7); outline: 3px solid transparent; outline-offset: 3px; transition: outline-color .2s;
+}
+.clip.is-playing .clip-frame { outline-color: var(--sun); }
+.clip-poster, .clip-frame iframe, .clip-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; border: 0; }
+.clip-frame video { object-fit: contain; background: #000; }
+.clip-play {
+  position: absolute; inset: 0; border: 0; padding: 0; cursor: pointer; display: grid; place-items: center;
+  background: linear-gradient(180deg, transparent 55%, rgba(10,26,47,.6));
+}
+.clip-play::before {
+  content: ""; width: 68px; height: 68px; border-radius: 50%; background: var(--sun);
+  box-shadow: 0 0 0 10px rgba(255,143,16,.25); transition: transform .2s;
+}
+.clip-play::after {
+  content: ""; position: absolute; left: 50%; top: 50%; margin: -12px 0 0 -6px;
+  border-style: solid; border-width: 12px 0 12px 19px; border-color: transparent transparent transparent var(--night);
+}
+.clip-play:hover::before, .clip-play:focus-visible::before { transform: scale(1.08); }
+.clip.is-playing .clip-play, .clip.is-playing .clip-len { display: none; }
+.clip-len {
+  position: absolute; top: 12px; right: 12px; background: rgba(10,26,47,.75); backdrop-filter: blur(6px); color: #fff;
+  font: 600 .8rem/1 var(--body); padding: 6px 9px; border-radius: 999px; pointer-events: none;
+}
+.clip h2 { font-size: var(--step-1); font-weight: 700; margin-top: 14px; font-variation-settings: normal; letter-spacing: -0.01em; }
+.clip p { margin: .3em 0 0; color: var(--ink-soft); font-size: var(--step--1); line-height: 1.45; }
+
+@media (max-width: 1080px) { .clip-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .clip-grid { grid-template-columns: repeat(2, 1fr); } .clip-play::before { width: 54px; height: 54px; } }
