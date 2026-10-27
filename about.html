@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css?v=20261102">
-  <link rel="stylesheet" href="css/about.css?v=20261102">
+  <link rel="stylesheet" href="css/base.css?v=20261107">
+  <link rel="stylesheet" href="css/about.css?v=20261107">
 </head>
 <body data-page="about">
   <a class="skip" href="#main">Skip to content</a>
@@ -56,91 +56,19 @@
       </div>
     </section>
 
-    <!-- BOARD: replace each "Board member name", photo and description with real details.
-         For a photo, add it to assets/img and change the <img> to:
-         <img class="photo" src="assets/img/their-photo.jpg" alt="Their name"> -->
+    <!-- BOARD: officers and board members, built from js/data/board.js. Addresses are intentionally not shown. -->
     <section class="section" id="board" aria-labelledby="board-title">
       <div class="wrap">
         <h2 id="board-title">Our leadership</h2>
         <p class="board-lede">Volunteers from Iowa City who guide our programs, finances and partnerships.</p>
 
-        <article class="leader" aria-labelledby="leader-name">
-          <img class="leader-photo" src="assets/img/team/nasr-mohammed.jpg" alt="Portrait of Nasr Aldden Osman Oshar Mohammed" width="600" height="600" loading="lazy">
-          <div class="leader-copy">
-            <p class="role">Executive Director</p>
-            <h3 id="leader-name">Nasr Aldden Osman Oshar Mohammed</h3>
-            <p>Nasr came to the United States in 2012 through the Diversity Visa lottery and made Iowa City his home. He has worked in tech for 10 years and is a Software Development Engineer in Test (SDET) at Leepfrog Technologies.</p>
-            <p>Long before Youth of Tomorrow, Nasr was serving his neighbors. From 2020 to 2023 he was a commissioner on Iowa City's Housing and Community Development Commission (HCDC), and he served the Sudanese community in Iowa City as its general secretary.</p>
-            <ul class="leader-facts">
-              <li><strong>10 years</strong> in tech</li>
-              <li><strong>2020–2023</strong> HCDC commissioner</li>
-              <li><strong>General secretary</strong> Sudanese community</li>
-            </ul>
-            <p class="leader-contact"><strong>Point of contact for boys:</strong> <a href="tel:+15155125795">515-512-5795</a> · <a href="mailto:oshar2008@gmail.com">oshar2008@gmail.com</a></p>
-          </div>
-        </article>
 
-        <h3 class="board-sub">Board of directors</h3>
-        <ul class="board-grid">
-          <li class="member">
-            <!-- Add Hanan's photo: <img class="photo" src="assets/img/team/hanan-yousif.jpg" alt="Portrait of Hanan Yousif"> -->
-            <div class="avatar"><img src="assets/img/logo-mark.png" alt=""></div>
-            <div>
-              <h3>Hanan Yousif</h3>
-              <p class="role">President</p>
-              <p>Leads the board and is the point of contact for girls and their families.</p>
-              <p class="member-contact"><a href="tel:+13194717171">319-471-7171</a><a href="mailto:ali.hanan@yahoo.com">ali.hanan@yahoo.com</a></p>
-            </div>
-          </li>
-          <li class="member">
-            <div class="avatar"><img class="photo" src="assets/img/team/haitham-osman.jpg" alt="Portrait of Dr. Haitham Osman" loading="lazy"></div>
-            <div>
-              <h3>Dr. Haitham Osman, MBBS, MPH</h3>
-              <p class="role">Board member</p>
-              <p>A physician and public health specialist with more than 15 years of experience in healthcare management, epidemiology and community health. He works with RIVA in Iowa to promote health equity, substance use prevention and culturally responsive health education for immigrant and refugee communities.</p>
-            </div>
-          </li>
-          <li class="member">
-            <div class="avatar"><img src="assets/img/logo-mark.png" alt=""></div>
-            <div>
-              <h3>Board member name</h3>
-              <p class="role">Vice Chair</p>
-              <p>Steps in for the chair and oversees our weekly programs, from chess to game nights.</p>
-            </div>
-          </li>
-          <li class="member">
-            <div class="avatar"><img src="assets/img/logo-mark.png" alt=""></div>
-            <div>
-              <h3>Board member name</h3>
-              <p class="role">Treasurer</p>
-              <p>Manages donations and the budget, and makes sure every dollar reaches the kids.</p>
-            </div>
-          </li>
-          <li class="member">
-            <div class="avatar"><img src="assets/img/logo-mark.png" alt=""></div>
-            <div>
-              <h3>Board member name</h3>
-              <p class="role">Secretary</p>
-              <p>Keeps records and meeting notes, and handles communication with families.</p>
-            </div>
-          </li>
-          <li class="member">
-            <div class="avatar"><img src="assets/img/logo-mark.png" alt=""></div>
-            <div>
-              <h3>Board member name</h3>
-              <p class="role">Youth Programs Lead</p>
-              <p>Plans outings and workshops and recruits mentors and volunteers.</p>
-            </div>
-          </li>
-          <li class="member">
-            <div class="avatar"><img src="assets/img/logo-mark.png" alt=""></div>
-            <div>
-              <h3>Board member name</h3>
-              <p class="role">Community Outreach Lead</p>
-              <p>Builds partnerships with mosques, schools and local organizations.</p>
-            </div>
-          </li>
-        </ul>
+        <!-- Cards are built from js/data/board.js: edit that file to add people, photos or bios -->
+        <h3 class="board-sub">Executive Director &amp; officers</h3>
+        <ul class="people" id="leaders"></ul>
+
+        <h3 class="board-sub">Board members</h3>
+        <ul class="people" id="members"></ul>
       </div>
     </section>
 
@@ -171,7 +99,9 @@
 
   <footer class="site-footer" id="site-footer"></footer>
 
-  <script src="js/data/programs.js?v=20261102"></script>
-  <script src="js/site.js?v=20261102"></script>
+  <script src="js/data/programs.js?v=20261107"></script>
+  <script src="js/data/board.js?v=20261107"></script>
+  <script src="js/site.js?v=20261107"></script>
+  <script src="js/about.js?v=20261107"></script>
 </body>
 </html>

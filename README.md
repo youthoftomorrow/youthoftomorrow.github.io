@@ -7,7 +7,7 @@ A plain HTML/CSS/JS site. No build step: open `index.html` in a browser, or uplo
 | Page | HTML | Styles | Script |
 |---|---|---|---|
 | Home | `index.html` | `css/home.css` | `js/home.js` |
-| About & board | `about.html` | `css/about.css` | none |
+| About & board | `about.html` | `css/about.css` | `js/about.js` |
 | Programs | `programs.html` | `css/programs.css` | `js/programs.js` |
 | Coming next | `coming-next.html` | `css/coming-next.css` | `js/coming-next.js` |
 | Videos | `videos.html` | `css/videos.css` | `js/videos.js` |
@@ -30,7 +30,7 @@ Every page also loads the shared files:
 - **Add a photo**: put a large copy in `assets/img/` and a small copy (about 700px wide) in `assets/thumb/` with the same name, then add a line to `js/data/photos.js`.
 - **Add a video**: upload it to YouTube, put a poster image (a still from the video) in `assets/poster/`, then add a line to `js/data/videos.js` with the YouTube ID in `yt` (the part after `/shorts/`, `youtu.be/` or `watch?v=`).
 - **Add an event**: copy an `<li class="event">` block in `events.html`.
-- **Board members**: search `about.html` for "Board member name".
+- **Board members**: edit `js/data/board.js`. Add a tall photo (3:4) to `assets/img/team/` and put its file name in `photo`; people without a photo show their initials. A `bio` adds a "Read bio" button.
 - **Points of contact** (phone and email cards): edit `CONTACTS` at the top of `js/site.js`.
 - **Office hours**: search `contact.html` for "To be announced".
 - **Partners**: copy an `<article class="partner">` block in `partners.html`, and add the logo to the strip in `index.html`.

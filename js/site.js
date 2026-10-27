@@ -16,7 +16,7 @@ const ORG_MAP = "https://www.google.com/maps/search/?api=1&query=" + encodeURICo
 
 // Points of contact. Shown wherever a page has <div data-contacts></div>.
 const CONTACTS = [
-  { for: "girls", name: "Hanan Yousif", title: "President", phone: "319-471-7171", email: "ali.hanan@yahoo.com" },
+  { for: "girls", name: "Hanan Ali Yousif", title: "President", phone: "319-471-7171", email: "ali.hanan@yahoo.com" },
   { for: "boys", name: "Nasr Mohammed", title: "Executive Director", phone: "515-512-5795", email: "oshar2008@gmail.com" },
 ];
 
