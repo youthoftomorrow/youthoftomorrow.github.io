@@ -11,7 +11,7 @@ YOT.videos = [
   { f: "img_2408", yt: "To82m45d8oE", len: "1:41", title: "Into the arena", text: "Lights down, vests on: laser tag night." },
   { f: "img_2986", yt: "D0YTiWshOpo", len: "0:10", title: "Circle at the mosque", text: "Sitting together for a talk at the Iowa City mosque." },
   { f: "img_1775", yt: "hp5dazgBkos", len: "0:10", title: "Youth meeting", text: "Teens trading ideas at the center." },
-  { f: "img_3216", yt: "UJhmlCtQgbY", len: "3:08", title: "Design Shift event", text: "Our members at a career and design event." },
+  { f: "img_3216", yt: "UJhmlCtQgbY", len: "3:08", title: "Design Shift in Ames", text: "Students designed a logo for Youth of Tomorrow at Design Shift in Ames, Iowa." },
   { f: "img_1774", yt: "JxVSKFxazDM", len: "19:48", title: "Meeting with Ustaz Mahmoud Lutfi", text: "The full recording of our youth meeting with Ustaz Mahmoud Lutfi at Mamma House." },
 ];
 

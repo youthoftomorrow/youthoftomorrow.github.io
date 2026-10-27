@@ -55,8 +55,7 @@ YOT.programs = [
     tagline: "Interview practice, campus visits and mentors",
     accent: "sky",
     photo: "img_3427",
-    photos: ["img_3429", "img_3432", "img_3430", "img_3219"],
-    video: "img_3216",
+    photos: ["img_3429", "img_3432", "img_3430", "img_3426"],
     about: [
       "Interview practice, campus visits and conversations with professionals who look like our kids and came from the same places.",
       "Teens leave with a résumé, a few new contacts and a clearer picture of what's possible.",

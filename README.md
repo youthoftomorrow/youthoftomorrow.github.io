@@ -12,7 +12,7 @@ A plain HTML/CSS/JS site. No build step: open `index.html` in a browser, or uplo
 | Coming next | `coming-next.html` | `css/coming-next.css` | `js/coming-next.js` |
 | Videos | `videos.html` | `css/videos.css` | `js/videos.js` |
 | Moments (photos) | `moments.html` | `css/moments.css` | `js/moments.js` |
-| Events | `events.html` | `css/events.css` | none |
+| Events | `events.html` | `css/events.css` | `js/events.js` |
 | Donate | `donate.html` | `css/donate.css` | `js/donate.js` |
 | Get involved | `join.html` | `css/join.css` | `js/join.js` |
 | Partners | `partners.html` | `css/partners.css` | none |
