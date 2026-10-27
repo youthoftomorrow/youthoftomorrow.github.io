@@ -9,20 +9,42 @@
 .facts li { display: flex; gap: 12px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--line); }
 .facts strong { min-width: 6.5em; color: var(--sky); font-weight: 600; }
 
-/* What we believe */
-.beliefs { list-style: none; padding: 0; margin: clamp(32px, 5vw, 52px) 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 40px); }
-.beliefs li { border-top: 4px solid var(--sun); padding-top: 18px; }
-.beliefs li:nth-child(2) { border-color: var(--sky); }
-.beliefs li:nth-child(3) { border-color: var(--gold); }
-.beliefs h3 { font-size: var(--step-1); font-weight: 700; }
-.beliefs p { color: var(--ink-soft); margin: .5em 0 0; }
+/* Mission, vision & goals */
+.mv-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(16px, 2vw, 24px); margin-top: clamp(28px, 4vw, 44px); }
+.mv-card { border-radius: var(--radius-lg); padding: clamp(26px, 4vw, 44px); position: relative; overflow: hidden; }
+.mv-card h3 { font-size: var(--step-1); font-weight: 700; margin-bottom: .7em; position: relative; }
+.mv-card p { font: 650 clamp(1.3rem, 1.05rem + .9vw, 1.85rem)/1.3 var(--display); letter-spacing: -0.01em; margin: 0; position: relative; max-width: 30ch; }
+.mv-mission { background: var(--night); color: #fff; }
+.mv-mission h3 { color: var(--gold); }
+.mv-mission::after { content: ""; position: absolute; right: -80px; bottom: -90px; width: 170px; height: 170px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, var(--gold), var(--sun) 60%); opacity: .9; }
+.mv-mission { padding-bottom: clamp(48px, 6vw, 64px); }
+.mv-mission p { max-width: 26ch; }
+.mv-vision { background: var(--sun); color: var(--night); }
+.mv-vision h3 { color: var(--night); }
+
+.mv-sub { font-size: var(--step-2); font-weight: 800; font-variation-settings: "wdth" 85; color: var(--night); margin: clamp(44px, 6vw, 64px) 0 clamp(18px, 2.4vw, 28px); }
+.goals { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.goals li { display: flex; align-items: center; gap: 14px; background: var(--paper); border-radius: 18px; padding: 16px 18px; font: 700 var(--step-0)/1.3 var(--body); color: var(--night); }
+.goals svg { flex: none; width: 40px; height: 40px; padding: 7px; border-radius: 12px; background: var(--sky-soft); fill: none; stroke: var(--sky); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.goals li:nth-child(even) svg { background: #FFF1E0; stroke: var(--sun-deep); }
+
+.areas { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.areas li { background: var(--paper); border-radius: 18px; padding: 20px; border-top: 5px solid var(--sky); }
+.areas li:nth-child(2) { border-top-color: var(--sun); }
+.areas li:nth-child(3) { border-top-color: #C2408F; }
+.areas li:nth-child(4) { border-top-color: var(--night); }
+.areas li:nth-child(5) { border-top-color: var(--gold); }
+.areas h4 { font: 750 var(--step-1)/1.15 var(--display); font-variation-settings: "wdth" 88; color: var(--night); margin: 0 0 .5em; }
+.areas p { margin: 0; color: var(--ink); font-size: var(--step--1); line-height: 1.55; }
 
 @media (max-width: 960px) {
   .story-grid { grid-template-columns: 1fr; }
-  .beliefs { grid-template-columns: 1fr 1fr; }
+  .mv-grid { grid-template-columns: 1fr; }
+  .goals { grid-template-columns: 1fr 1fr; }
+  .areas { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
-  .beliefs { grid-template-columns: 1fr; }
+  .goals, .areas { grid-template-columns: 1fr; }
 }
 
 
@@ -104,3 +126,4 @@
   .bio-layout { grid-template-columns: 1fr; }
   .bio-layout .person-photo { max-width: 220px; }
 }
+@media (max-width: 1180px) and (min-width: 961px) { .areas { grid-template-columns: repeat(3, 1fr); } }
