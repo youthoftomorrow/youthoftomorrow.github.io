@@ -9,7 +9,7 @@ YOT.board = {
     {
       name: "Nasr Aldden Osman Oshar Mohammed",
       role: "Executive Director",
-      photo: "nasr-mohammed-portrait.jpg",
+      photo: "nasr-mohammed-tie.jpg",
       contactFor: "boys",
       phone: "515-512-5795",
       email: "oshar2008@gmail.com",
