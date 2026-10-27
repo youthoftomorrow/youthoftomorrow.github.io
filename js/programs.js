@@ -19,10 +19,7 @@ $("#program-sections").innerHTML = YOT.programs
           ${p.about.map((t) => `<p>${esc(t)}</p>`).join("")}
           <h3>What it looks like</h3>
           <ul class="looks">${p.looksLike.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
-          <div class="pd-actions">
-            <a class="btn btn-sun" href="join.html?interest=${p.id}">Sign up for this</a>
-            ${video ? `<button class="btn btn-line" data-video="${video.f}">Watch the video (${video.len})</button>` : ""}
-          </div>
+          ${video ? `<div class="pd-actions"><button class="btn btn-line" data-video="${video.f}">Watch the video (${video.len})</button></div>` : ""}
         </div>
         <div class="pd-media">
           ${photos

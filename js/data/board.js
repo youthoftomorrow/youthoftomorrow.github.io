@@ -7,7 +7,7 @@ window.YOT = window.YOT || {};
 YOT.board = {
   leaders: [
     {
-      name: "Nasr Aldden Osman Oshar Mohammed",
+      name: "Nasr Mohammed",
       role: "Executive Director",
       photo: "nasr-mohammed-tie.jpg",
       contactFor: "boys",
