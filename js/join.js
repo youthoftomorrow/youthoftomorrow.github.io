@@ -5,7 +5,7 @@
 //   join.html?ideas=drop-in,council   → lists "Coming next" picks in the message
 
 // Google Sheets endpoint: paste the Web app URL from Apps Script here (see google-apps-script.gs).
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbzvHgPaNP8oGsYNGc3s-N599AhYjJyKkl4SD8YkzVFQ3oZVXYmAEGOgq2xGoygifep8/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzEBoYzrU6yMpcWz3CdA6v_CRrtJI3gc1eFZ5T49rEM_HDeRHi_ZyaSapaeTND7xJC7/exec";
 
 /* Program checkboxes */
 $("#interests").insertAdjacentHTML(

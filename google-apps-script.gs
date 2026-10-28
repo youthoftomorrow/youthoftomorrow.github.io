@@ -10,7 +10,7 @@
  *       Execute as: Me
  *       Who has access: Anyone
  *     Click Deploy and copy the Web app URL (ends in /exec).
- *  5. Paste that URL into SHEET_URL at the bottom of script.js on the website.
+ *  5. Paste that URL into SHEET_URL near the top of js/join.js on the website.
  *
  * Suggestions from the Get involved page are saved to a second tab, "Suggestions",
  * which the script creates by itself the first time one arrives.
