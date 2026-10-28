@@ -1,4 +1,4 @@
-// Current programs. This list feeds the Programs dropdown, the Programs page,
+// Current programs. This list feeds the Programs page and its buttons, the footer,
 // the home page and the sign-up form. To add a program, add an entry here.
 //   id      → used in links, e.g. programs.html#chess
 //   photo   → file name in assets/thumb + assets/img (no extension)

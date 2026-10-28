@@ -1,6 +1,6 @@
 // =========================================================
 // Youth of Tomorrow — shared script (every page loads this)
-// Builds the header, Programs dropdown and footer, so menu
+// Builds the header and footer, so menu
 // changes only need to be made here.
 // Each page sets <body data-page="..."> to mark its menu link.
 // =========================================================
@@ -20,11 +20,11 @@ const CONTACTS = [
   { for: "boys", name: "Nasr Mohammed", title: "Executive Director", phone: "515-512-5795", email: "oshar2008@gmail.com" },
 ];
 
-// Main menu. "programs" is the dropdown.
+// Main menu.
 const NAV = [
   { key: "about", href: "about.html", label: "About" },
   { key: "partners", href: "partners.html", label: "Partners" },
-  { key: "programs", label: "Programs", dropdown: true },
+  { key: "programs", href: "programs.html", label: "Programs" },
   { key: "videos", href: "videos.html", label: "Videos" },
   { key: "moments", href: "moments.html", label: "Moments" },
   { key: "events", href: "events.html", label: "Events" },
@@ -36,39 +36,11 @@ const page = document.body.dataset.page;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
 /* ---------- Header ---------- */
-function dropdownHTML() {
-  const items = (YOT.programs || [])
-    .map(
-      (p) => `<a href="programs.html#${p.id}">
-        <img src="assets/thumb/${p.photo}.jpg" alt="" loading="lazy">
-        <span><strong>${esc(p.name)}</strong><small>${esc(p.tagline)}</small></span>
-      </a>`
-    )
-    .join("");
-  return `<div class="dropdown-panel" id="programs-menu">
-      ${items}
-      <hr>
-      <a class="dd-next" href="coming-next.html"${page === "coming-next" ? ' aria-current="page"' : ""}>
-        <span class="dd-icon" aria-hidden="true">+</span>
-        <span><strong>Coming next</strong><small>New programs we're planning, and how to help pick them</small></span>
-      </a>
-      <a class="dd-all" href="programs.html">See all programs</a>
-    </div>`;
-}
-
 function headerHTML() {
   const links = NAV.map((n) => {
-    if (n.dropdown) {
-      const current = page === "programs" || page === "coming-next";
-      return `<div class="dropdown">
-          <button class="nav-link${current ? " is-current" : ""}" aria-expanded="false" aria-controls="programs-menu">
-            ${n.label}
-            <svg class="chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          ${dropdownHTML()}
-        </div>`;
-    }
-    return `<a class="nav-link" href="${n.href}"${page === n.key ? ' aria-current="page"' : ""}>${n.label}</a>`;
+    // "Coming next" belongs to Programs, so it marks Programs as the current page too.
+    const current = page === n.key || (n.key === "programs" && page === "coming-next");
+    return `<a class="nav-link" href="${n.href}"${current ? ' aria-current="page"' : ""}>${n.label}</a>`;
   }).join("");
 
   return `<div class="wrap header-inner">
@@ -143,29 +115,7 @@ const setMenu = (open) => {
   menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
 };
 menuBtn.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
-$$("a", nav).forEach((a) => a.addEventListener("click", () => { setMenu(false); setDropdown(false); }));
-
-/* ---------- Programs dropdown ---------- */
-const dd = $(".dropdown");
-const ddBtn = $("button", dd);
-const isDesktop = () => window.matchMedia("(min-width: 1081px) and (hover: hover)").matches;
-function setDropdown(open) {
-  dd.classList.toggle("is-open", open);
-  ddBtn.setAttribute("aria-expanded", open);
-}
-ddBtn.addEventListener("click", () => setDropdown(isDesktop() || !dd.classList.contains("is-open")));
-let closeTimer;
-dd.addEventListener("mouseenter", () => { if (isDesktop()) { clearTimeout(closeTimer); setDropdown(true); } });
-dd.addEventListener("mouseleave", () => { if (isDesktop()) closeTimer = setTimeout(() => setDropdown(false), 160); });
-dd.addEventListener("keydown", (e) => {
-  const links = $$(".dropdown-panel a", dd);
-  const i = links.indexOf(document.activeElement);
-  if (e.key === "Escape") { setDropdown(false); ddBtn.focus(); }
-  if (e.key === "ArrowDown") { e.preventDefault(); setDropdown(true); (links[i + 1] || links[0]).focus(); }
-  if (e.key === "ArrowUp") { e.preventDefault(); (links[i - 1] || links[links.length - 1]).focus(); }
-});
-document.addEventListener("click", (e) => { if (!dd.contains(e.target) && isDesktop()) setDropdown(false); });
-dd.addEventListener("focusout", (e) => { if (isDesktop() && !dd.contains(e.relatedTarget)) setDropdown(false); });
+$$("a", nav).forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
 /* ---------- Lightbox: YOT.lightbox.open([{src, cap}], startIndex) ---------- */
 YOT.lightbox = (() => {
