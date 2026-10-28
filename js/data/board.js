@@ -53,6 +53,15 @@ YOT.board = {
       ],
     },
     {
+      name: "Dr. Amin Ibrahim Elfaki, MBBS",
+      role: "Board member",
+      photo: "amin-elfaki.jpg",
+      bio: [
+        "Dr. Amin Ibrahim Elfaki earned his medical degree (MBBS) from the University of Juba in Sudan. He built his career in emergency and trauma medicine, treating patients in Sudan and in Saudi Arabia.",
+        "He went on to lead hospital administration in Sudan's Northern State and worked with Sudan's Ministry of Health. He brings years of experience in caring for people under pressure and in running health services to the board of Youth of Tomorrow.",
+      ],
+    },
+    {
       name: "Entisar Jafar",
       role: "Board member",
       bio: [
