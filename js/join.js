@@ -1,6 +1,6 @@
 // Get involved page: sign-up form that saves to a Google Sheet.
 // Links can pre-fill the form:
-//   join.html?role=volunteer          → picks "I want to help" (youth | parent | volunteer)
+//   join.html?role=volunteer          → picks "I want to help" (youth | youth-volunteer | parent | volunteer)
 //   join.html?interest=chess          → ticks a program (ids from js/data/programs.js)
 //   join.html?ideas=drop-in,council   → lists "Coming next" picks in the message
 
@@ -18,6 +18,7 @@ $("#interests").insertAdjacentHTML(
 /* Get involved: role tabs + form */
 const roleTitles = {
   "Youth member": "Sign up as a youth member",
+  "Youth volunteer": "Sign up as a youth volunteer",
   Parent: "Get updates for your family",
   "Volunteer or mentor": "Offer to help",
 };
@@ -39,7 +40,7 @@ const submitBtn = $("button[type=submit]", form);
 
 // Show only the fields that fit the selected role; hidden fields are disabled so they're skipped.
 function syncRoleFields() {
-  const key = { "Youth member": "youth", Parent: "parent", "Volunteer or mentor": "volunteer" }[$("#role").value];
+  const key = { "Youth member": "youth", "Youth volunteer": "youthvol", Parent: "parent", "Volunteer or mentor": "volunteer" }[$("#role").value];
   $$("[data-for]", form).forEach((el) => {
     const on = el.dataset.for.split(" ").includes(key);
     el.hidden = !on;
@@ -122,8 +123,17 @@ form.addEventListener("submit", async (e) => {
 
 /* Pre-fill from the link */
 const params = new URLSearchParams(location.search);
-const roleParam = { youth: "Youth member", parent: "Parent", volunteer: "Volunteer or mentor" }[params.get("role")];
+const roleParam = { youth: "Youth member", "youth-volunteer": "Youth volunteer", parent: "Parent", volunteer: "Volunteer or mentor" }[params.get("role")];
 if (roleParam) $(`.path[data-role="${roleParam}"]`).click();
+
+// "Sign up as a youth volunteer" on this page picks that option and scrolls up to the form.
+$$("[data-pick-role]").forEach((a) =>
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    $(`.path[data-role="${a.dataset.pickRole}"]`).click();
+    $("#signup").scrollIntoView({ behavior: "smooth" });
+  })
+);
 const interest = params.get("interest");
 if (interest) {
   const box = $(`#interests input[data-id="${CSS.escape(interest)}"]`);

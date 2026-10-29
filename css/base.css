@@ -142,6 +142,7 @@ a { color: inherit; }
 .cta-band .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
 .cta-band h2 { font-size: var(--step-2); max-width: 22ch; }
 .cta-band p { margin: .5em 0 0; max-width: 48ch; }
+.cta-band p a { color: inherit; font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .cta-band .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- Footer ---------- */

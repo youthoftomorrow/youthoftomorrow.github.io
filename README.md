@@ -48,5 +48,6 @@ From Terminal, in this folder, this replaces the old number with a new one in al
 
 - `programs.html#chess`: jump to a program (ids are in `js/data/programs.js`).
 - `moments.html?filter=faith`: open the gallery filtered (`play`, `learn`, `faith`, `community`).
-- `join.html?role=volunteer`: open the sign-up form on a role (`youth`, `parent`, `volunteer`).
+- `join.html?role=volunteer`: open the sign-up form on a role (`youth`, `youth-volunteer`, `parent`, `volunteer`).
+- `join.html#volunteer-hours`: the volunteer hours certificate card.
 - `join.html?interest=chess`: tick a program on the sign-up form.

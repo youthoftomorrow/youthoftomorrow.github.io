@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css?v=20261116">
-  <link rel="stylesheet" href="css/join.css?v=20261116">
+  <link rel="stylesheet" href="css/base.css?v=20261117">
+  <link rel="stylesheet" href="css/join.css?v=20261117">
 </head>
 <body data-page="join">
   <a class="skip" href="#main">Skip to content</a>
@@ -26,7 +26,7 @@
       </div>
     </section>
 
-    <section class="join" aria-labelledby="join-title">
+    <section class="join" id="signup" aria-labelledby="join-title">
       <div class="wrap join-grid">
         <div class="join-copy">
           <h2 id="join-title">Come be part of tomorrow.</h2>
@@ -34,6 +34,9 @@
           <div class="paths" role="tablist" aria-label="How do you want to get involved?">
             <button role="tab" class="path is-on" aria-selected="true" data-role="Youth member">
               <strong>I'm a young person</strong><span>Sign up for game nights, chess and trips.</span>
+            </button>
+            <button role="tab" class="path" aria-selected="false" data-role="Youth volunteer">
+              <strong>I'm a teen who wants to volunteer</strong><span>Help at our events and earn a certificate for your hours.</span>
             </button>
             <button role="tab" class="path" aria-selected="false" data-role="Parent">
               <strong>I'm a parent</strong><span>Get event announcements and enroll your kids.</span>
@@ -59,11 +62,13 @@
             <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
           </div>
 
-          <div class="row" data-for="youth">
+          <p class="form-note" data-for="youthvol">We keep track of your hours and give you a signed certificate you can use for high school service hours and college applications.</p>
+
+          <div class="row" data-for="youth youthvol">
             <label>Age<input name="age" type="number" min="5" max="25" inputmode="numeric" required></label>
             <label>Parent or guardian name<input name="guardian_name" required></label>
           </div>
-          <label data-for="youth">Parent or guardian phone<input name="guardian_phone" type="tel" required></label>
+          <label data-for="youth youthvol">Parent or guardian phone<input name="guardian_phone" type="tel" required></label>
 
           <label data-for="parent">Children's names and ages<input name="children" placeholder="e.g. Amir 12, Sara 14" required></label>
 
@@ -73,14 +78,37 @@
           </fieldset>
 
           <label data-for="volunteer">How would you like to help?<input name="help" placeholder="Mentoring, driving, cooking, coaching, sponsoring…" required></label>
+          <label data-for="youthvol">How would you like to help?<input name="help" placeholder="Setting up events, helping younger kids, photos, tech…" required></label>
 
           <label><span>Message <span class="opt">(optional)</span></span><textarea name="message" id="message" rows="3" placeholder="Questions, allergies, anything we should know…"></textarea></label>
 
-          <label class="check" data-for="youth"><input type="checkbox" name="guardian_ok" value="Yes" required>My parent or guardian knows I'm signing up.</label>
+          <label class="check" data-for="youth youthvol"><input type="checkbox" name="guardian_ok" value="Yes" required>My parent or guardian knows I'm signing up.</label>
 
           <button class="btn btn-sun" type="submit">Send sign-up</button>
           <p class="form-status" id="form-status" role="status"></p>
         </form>
+      </div>
+    </section>
+
+    <!-- VOLUNTEER HOURS CERTIFICATE for youth volunteers -->
+    <section class="hours" id="volunteer-hours" aria-labelledby="hours-title">
+      <div class="wrap">
+        <article class="hours-card">
+          <div class="hours-badge" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="19" r="13" fill="none" stroke="currentColor" stroke-width="3"/><path d="M18 19l4 4 8-8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 30l-4 13 7-3 4 6 3-11M32 30l4 13-7-3-4 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="hours-copy">
+            <p class="hours-eyebrow">For youth volunteers</p>
+            <h2 id="hours-title">Volunteer with us and earn a certificate for your hours.</h2>
+            <p>Teens can volunteer at our events, game nights and community days. We keep track of your hours and give you a signed certificate from Youth of Tomorrow that you can use for high school service-hour requirements and on college and scholarship applications.</p>
+            <ul class="hours-list">
+              <li><strong>Real experience</strong> helping run events and supporting younger kids</li>
+              <li><strong>Your hours on record</strong>, tracked by our team</li>
+              <li><strong>A signed certificate</strong> for school, college and scholarships</li>
+            </ul>
+            <a class="btn btn-sun" href="join.html?role=youth-volunteer#signup" data-pick-role="Youth volunteer">Sign up as a youth volunteer</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -128,9 +156,9 @@
 
   <footer class="site-footer" id="site-footer"></footer>
 
-  <script src="js/data/programs.js?v=20261116"></script>
-  <script src="js/data/ideas.js?v=20261116"></script>
-  <script src="js/site.js?v=20261116"></script>
-  <script src="js/join.js?v=20261116"></script>
+  <script src="js/data/programs.js?v=20261117"></script>
+  <script src="js/data/ideas.js?v=20261117"></script>
+  <script src="js/site.js?v=20261117"></script>
+  <script src="js/join.js?v=20261117"></script>
 </body>
 </html>
