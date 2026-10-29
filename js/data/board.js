@@ -24,7 +24,11 @@ YOT.board = {
       contactFor: "girls",
       phone: "319-471-7171",
       email: "ali.hanan@yahoo.com",
-      bio: ["Hanan leads the board and is the point of contact for girls and their families."],
+      bio: [
+        "Hanan holds a Diploma in Hospital Administration and has a strong background in community involvement and education.",
+        "While living in the United Arab Emirates, she served on the Parent Councils of three international schools: Al Ansar International School, Cambridge International School and Arab Unity School.",
+        "Today she teaches at a weekend school at Mama House in Iowa City, where she continues to support education and community life. Hanan leads the board and is the point of contact for girls and their families.",
+      ],
     },
     {
       name: "Ismail Mohamed Bakheit",
