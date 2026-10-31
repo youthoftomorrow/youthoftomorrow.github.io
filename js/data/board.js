@@ -21,6 +21,7 @@ YOT.board = {
     {
       name: "Hanan Ali Yousif",
       role: "President",
+      photo: "hanan-yousif-portrait.jpg",
       contactFor: "girls",
       phone: "319-471-7171",
       email: "ali.hanan@yahoo.com",

@@ -80,6 +80,7 @@ function footerHTML() {
         <ul>
           <li><a href="about.html">About &amp; leadership</a></li>
           <li><a href="about.html#mission">Mission &amp; vision</a></li>
+          <li><a href="about.html#president-message">President's message</a></li>
           <li><a href="partners.html">Partners</a></li>
           <li><a href="videos.html">Videos</a></li>
           <li><a href="moments.html">Photo moments</a></li>
