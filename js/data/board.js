@@ -32,9 +32,13 @@ YOT.board = {
       ],
     },
     {
-      name: "Ismail Mohamed Bakheit",
+      name: "Ismail Mohamed Bakheit Habba, BS",
       role: "Secretary",
-      bio: ["Ismail keeps the board's records and meeting notes, and handles communication with families."],
+      photo: "ismail-habba-portrait.jpg",
+      bio: [
+        "Ismail holds a Bachelor of Science in Chemistry and is a retired teacher who brings years of classroom experience to working with young people.",
+        "Today he works as a Direct Care Professional at SUI, supporting people in their daily lives. As Secretary, he keeps the board's records and meeting notes and helps with communication with families.",
+      ],
     },
     {
       name: "Mohamed A. Ahmed, MSc",
