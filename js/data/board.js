@@ -81,6 +81,14 @@ YOT.board = {
     { name: "Rena Elmobark", role: "Board member" },
     { name: "Rasha Mohammed", role: "Board member" },
     { name: "Taysir Ahmed", role: "Board member" },
-    { name: "Yasir Abbashar", role: "Board member" },
+    {
+      name: "Yasir Abbashar",
+      role: "Board member",
+      photo: "yasir-abbashar-portrait.jpg",
+      bio: [
+        "Yasir came to Iowa City with his family at the end of 2012. He studied computer science at community college for a year while driving a taxi, then spent four years working at Papa John's.",
+        "He then moved into residential care, working with Reach for Your Potential, Systems Unlimited and Optimae, where he provides support and assistance to people who need it. The work has given him valuable caregiving skills and experience working with people from many different backgrounds.",
+      ],
+    },
   ],
 };
