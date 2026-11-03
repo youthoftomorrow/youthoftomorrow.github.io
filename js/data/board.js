@@ -65,7 +65,7 @@ YOT.board = {
     {
       name: "Dr. Amin Ibrahim Elfaki, MBBS",
       role: "Board member",
-      photo: "amin-elfaki.jpg",
+      photo: "amin-elfaki-suit.jpg",
       bio: [
         "Dr. Amin Ibrahim Elfaki earned his medical degree (MBBS) from the University of Juba in Sudan. He built his career in emergency and trauma medicine, treating patients in Sudan and in Saudi Arabia.",
         "He went on to lead hospital administration in Sudan's Northern State and worked with Sudan's Ministry of Health. He brings years of experience in caring for people under pressure and in running health services to the board of Youth of Tomorrow.",
@@ -87,7 +87,7 @@ YOT.board = {
     {
       name: "Yasir Abbashar",
       role: "Board member",
-      photo: "yasir-abbashar-portrait.jpg",
+      photo: "yasir-abbashar-suit.jpg",
       bio: [
         "Yasir came to Iowa City with his family at the end of 2012. He studied computer science at community college for a year while driving a taxi, then spent four years working at Papa John's.",
         "He then moved into residential care, working with Reach for Your Potential, Systems Unlimited and Optimae, where he provides support and assistance to people who need it. The work has given him valuable caregiving skills and experience working with people from many different backgrounds.",
