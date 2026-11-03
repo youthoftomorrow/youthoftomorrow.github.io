@@ -9,7 +9,7 @@ const telLink = (p) => "tel:+1" + p.replace(/\D/g, "");
 
 function portrait(m, i, big = false) {
   return m.photo
-    ? `<img class="person-photo" src="assets/img/team/${m.photo}" alt="Portrait of ${YOT.esc(m.name)}"${big ? "" : ' loading="lazy"'}>`
+    ? `<img class="person-photo" src="assets/img/team/${m.photo}" alt="${YOT.esc(m.photoAlt || "Portrait of " + m.name)}"${big ? "" : ' loading="lazy"'}>`
     : `<div class="person-photo person-initials t${i % 4}" aria-hidden="true"><span>${initialsOf(m.name)}</span></div>`;
 }
 

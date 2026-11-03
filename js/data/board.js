@@ -1,5 +1,6 @@
 // Leadership and board shown on the About page. Addresses are intentionally not included.
 //   photo       → file in assets/img/team (a tall 3:4 portrait works best). Leave out to show initials.
+//   photoAlt    → optional description of the picture when it isn't a portrait (e.g. the logo).
 //   bio         → shown when someone presses "Read bio". Leave out if there's no bio yet.
 //   contactFor  → "girls" or "boys" adds a "Contact for …" tag and shows phone and email.
 window.YOT = window.YOT || {};
@@ -73,14 +74,16 @@ YOT.board = {
     {
       name: "Entisar Jafar",
       role: "Board member",
+      photo: "yot-logo-portrait.jpg",
+      photoAlt: "Youth of Tomorrow logo",
       bio: [
         "Entisar is a leader in volunteer work with many of the Sudanese community's groups and organizations in Iowa City. Entisar is passionate about community unity, supporting families and empowering youth.",
       ],
     },
-    // { name: "Imithaal Ali", role: "Board member" },
-    // { name: "Rena Elmobark", role: "Board member" },
-    // { name: "Rasha Mohammed", role: "Board member" },
-    // { name: "Taysir Ahmed", role: "Board member" },
+    { name: "Imithaal Ali", role: "Board member", photo: "yot-logo-portrait.jpg", photoAlt: "Youth of Tomorrow logo" },
+    { name: "Rena Elmobark", role: "Board member", photo: "yot-logo-portrait.jpg", photoAlt: "Youth of Tomorrow logo" },
+    { name: "Rasha Mohammed", role: "Board member", photo: "yot-logo-portrait.jpg", photoAlt: "Youth of Tomorrow logo" },
+    { name: "Taysir Ahmed", role: "Board member", photo: "yot-logo-portrait.jpg", photoAlt: "Youth of Tomorrow logo" },
     {
       name: "Yasir Abbashar",
       role: "Board member",
