@@ -20,16 +20,16 @@ const CONTACTS = [
   { for: "boys", name: "Nasr Mohammed", title: "Executive Director", phone: "515-512-5795", email: "oshar2008@gmail.com" },
 ];
 
-// Main menu.
+// Main menu. Icons are 24×24 line drawings, shown only in the phone menu.
 const NAV = [
-  { key: "about", href: "about.html", label: "About" },
-  { key: "partners", href: "partners.html", label: "Partners" },
-  { key: "programs", href: "programs.html", label: "Programs" },
-  { key: "videos", href: "videos.html", label: "Videos" },
-  { key: "moments", href: "moments.html", label: "Moments" },
-  { key: "events", href: "events.html", label: "Events" },
-  { key: "donate", href: "donate.html", label: "Donate" },
-  { key: "contact", href: "contact.html", label: "Contact" },
+  { key: "about", href: "about.html", label: "About", icon: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>' },
+  { key: "partners", href: "partners.html", label: "Partners", icon: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>' },
+  { key: "programs", href: "programs.html", label: "Programs", icon: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>' },
+  { key: "videos", href: "videos.html", label: "Videos", icon: '<circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/>' },
+  { key: "moments", href: "moments.html", label: "Moments", icon: '<rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M20.5 16l-5-5-8.5 8"/>' },
+  { key: "events", href: "events.html", label: "Events", icon: '<rect x="4" y="5.5" width="16" height="14.5" rx="2"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/>' },
+  { key: "donate", href: "donate.html", label: "Donate", icon: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>' },
+  { key: "contact", href: "contact.html", label: "Contact", icon: '<rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/>' },
 ];
 
 const page = document.body.dataset.page;
@@ -40,7 +40,9 @@ function headerHTML() {
   const links = NAV.map((n) => {
     // "Coming next" belongs to Programs, so it marks Programs as the current page too.
     const current = page === n.key || (n.key === "programs" && page === "coming-next");
-    return `<a class="nav-link" href="${n.href}"${current ? ' aria-current="page"' : ""}>${n.label}</a>`;
+    return `<a class="nav-link" href="${n.href}"${current ? ' aria-current="page"' : ""}>
+        <svg class="nav-ico" viewBox="0 0 24 24" aria-hidden="true">${n.icon}</svg>${n.label}
+      </a>`;
   }).join("");
 
   return `<div class="wrap header-inner">

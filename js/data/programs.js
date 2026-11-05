@@ -19,7 +19,7 @@ YOT.programs = [
       "Monthly trips to the bowling alley, laser tag arena and trampoline park, plus foosball and table games at the center.",
       "The point is fun. The side effect is friendship: kids who meet on a game night start showing up for each other everywhere else.",
     ],
-    looksLike: ["A group outing about once a month", "Rides arranged for kids who need them", "Snacks, team games and plenty of trash talk"],
+    looksLike: ["A group outing about once a month", "Foosball at the center", "Cards and board games every other week (starting soon)", "Rides arranged for kids who need them"],
   },
   {
     id: "chess",

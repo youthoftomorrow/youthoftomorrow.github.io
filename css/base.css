@@ -111,6 +111,25 @@ a { color: inherit; }
   content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 3px; border-radius: 3px; background: var(--sun);
 }
 .nav-cta { padding: .7em 1.2em; font-size: .95rem; }
+.nav-ico { display: none; width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Text link with a leading icon and a trailing arrow ("Meet our leadership") */
+.icon-link { display: inline-flex; align-items: center; gap: 8px; }
+.icon-link svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.icon-link .arrow { transition: transform .2s; }
+.icon-link:hover .arrow { transform: translateX(4px); }
+
+/* Pill link with the certificate badge (home page orange band) */
+.cert-pill {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; padding: 8px 16px 8px 8px;
+  background: var(--night); color: #fff; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: var(--step--1);
+  transition: transform .2s, box-shadow .2s;
+}
+.cert-pill:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -12px rgba(10,26,47,.7); }
+.cert-pill .badge { width: 34px; height: 34px; border-radius: 50%; background: var(--gold); color: var(--night); display: grid; place-items: center; flex: none; }
+.cert-pill .badge svg { width: 22px; height: 22px; }
+.cert-pill .arrow { color: var(--gold); transition: transform .2s; }
+.cert-pill:hover .arrow { transform: translateX(3px); }
 
 
 .menu-btn { display: none; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; padding: 10px; }
@@ -142,7 +161,6 @@ a { color: inherit; }
 .cta-band .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
 .cta-band h2 { font-size: var(--step-2); max-width: 22ch; }
 .cta-band p { margin: .5em 0 0; max-width: 48ch; }
-.cta-band p a { color: inherit; font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .cta-band .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- Footer ---------- */
@@ -183,10 +201,12 @@ a { color: inherit; }
     transform: translateY(-110%); visibility: hidden; transition: transform .3s, visibility .3s; z-index: -1;
   }
   .nav.is-open { transform: none; visibility: visible; }
-  .nav-link { width: 100%; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 1.15rem; }
+  .nav-link { width: 100%; justify-content: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 1.15rem; }
   .nav-link[aria-current="page"]::after, .nav-link.is-current::after { display: none; }
   .nav-link[aria-current="page"], .nav-link.is-current { color: var(--gold); }
   .nav-cta { margin-top: 18px; }
+  .nav-ico { display: block; opacity: .9; }
+  .nav-link[aria-current="page"] .nav-ico { color: var(--sun); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid > :first-child { grid-column: 1 / -1; }
 }
