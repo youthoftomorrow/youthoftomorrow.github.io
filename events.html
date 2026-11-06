@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css?v=20261125">
-  <link rel="stylesheet" href="css/events.css?v=20261125">
+  <link rel="stylesheet" href="css/base.css?v=20261128">
+  <link rel="stylesheet" href="css/events.css?v=20261128">
 </head>
 <body data-page="events">
   <a class="skip" href="#main">Skip to content</a>
@@ -28,18 +28,53 @@
 
     <section class="section" aria-labelledby="events-title">
       <div class="wrap">
-        <!-- COMING SOON: swimming. When registration opens, add a button linking to join.html. -->
-        <article class="coming-soon" id="swimming" aria-labelledby="swim-title">
-          <img class="swim-photo" src="assets/img/swimming.jpeg" data-full="assets/img/swimming.jpeg" alt="Two kids swimming in an indoor pool" width="768" height="1024">
+        <!-- SWIMMING with the Iowa City Eels: registration open. Prices and times are also in js/data/programs.js. -->
+        <article class="coming-soon swim-open" id="swimming" aria-labelledby="swim-title">
+          <img class="swim-photo" src="assets/img/swimming.jpg" data-full="assets/img/swimming.jpg" alt="Two kids swimming in an indoor pool" width="768" height="1024">
           <div class="swim-copy">
-            <p class="soon-badge">Coming soon</p>
+            <p class="soon-badge open-badge">Registration open</p>
             <h2 id="swim-title">Swimming</h2>
-            <p>We're starting swimming sessions for <strong>boys and girls</strong>. Whether you're learning to float or ready to race a length, there's a spot for you in the pool.</p>
-            <p class="swim-note">Registration opens very soon. Check back here for dates and details.</p>
-            <h3 class="swim-q">Questions about swimming?</h3>
-            <div data-contacts></div>
+            <p>We've partnered with the <strong>Iowa City Eels</strong> swim club to offer swim lessons for <strong>boys and girls ages 10–18</strong>. Every swimmer starts with a <strong>tryout</strong>, and the club then places them in the right group. Swimmers train with the club's coaches three days a week.</p>
+            <ul class="swim-perks">
+              <li>Certificates from the club</li>
+              <li>Modest, covered swimwear welcome for girls</li>
+              <li>Boys and girls can swim separately</li>
+            </ul>
+            <a class="btn btn-sun swim-cta" href="join.html?role=swimming#signup">Register for swimming</a>
           </div>
         </article>
+
+        <div class="swim-details" aria-label="Swimming groups, costs and requirements">
+          <div class="swim-box">
+            <h3>Groups and monthly fees</h3>
+            <table class="swim-table">
+              <thead><tr><th scope="col">Group</th><th scope="col">Days</th><th scope="col">Time</th><th scope="col">Fee</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Dolphin</th><td>Mon, Wed, Thu</td><td>5:00–5:30 pm</td><td>$70/month</td></tr>
+                <tr><th scope="row">Sunfish 2</th><td>Mon, Wed, Thu</td><td>5:00–5:30 pm</td><td>$75/month</td></tr>
+                <tr><th scope="row">Sunfish 1</th><td>Mon, Wed, Thu</td><td>5:30–6:15 pm</td><td>$82/month</td></tr>
+              </tbody>
+            </table>
+            <p class="swim-small">You don't choose a group when you register. The Iowa City Eels place each swimmer in a group after a tryout.</p>
+          </div>
+          <div class="swim-box">
+            <h3>Good to know</h3>
+            <ul class="swim-list">
+              <li><strong>Liability insurance:</strong> $35 per swimmer, once a year. Required for every swimmer.</li>
+              <li><strong>Equipment:</strong> the club provides it. Each swimmer only needs their own fins ($10–12).</li>
+              <li><strong>SafeSport training:</strong> the club requires it for parents and for swimmers 12 and older.</li>
+              <li><strong>Certificates:</strong> the club gives swimmers certificates.</li>
+              <li><strong>Modest swimwear:</strong> girls are welcome to dress modestly and stay covered in the pool.</li>
+              <li><strong>Boys and girls separately:</strong> the club is willing to separate boys and girls.</li>
+              <li><strong>Tryout first:</strong> the club holds a tryout and assigns each swimmer to a group.</li>
+              <li><strong>Who can join:</strong> boys and girls ages 10–18.</li>
+            </ul>
+          </div>
+          <div class="swim-box swim-contacts">
+            <h3>Questions about swimming?</h3>
+            <div data-contacts></div>
+          </div>
+        </div>
 
         <!-- GAMES AT THE CENTER: foosball (done) and cards & board games (coming soon) -->
         <section class="games" id="games" aria-labelledby="games-title">
@@ -154,9 +189,9 @@
 
   <footer class="site-footer" id="site-footer"></footer>
 
-  <script src="js/data/programs.js?v=20261125"></script>
-  <script src="js/data/videos.js?v=20261125"></script>
-  <script src="js/site.js?v=20261125"></script>
-  <script src="js/events.js?v=20261125"></script>
+  <script src="js/data/programs.js?v=20261128"></script>
+  <script src="js/data/videos.js?v=20261128"></script>
+  <script src="js/site.js?v=20261128"></script>
+  <script src="js/events.js?v=20261128"></script>
 </body>
 </html>

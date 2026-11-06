@@ -4,11 +4,41 @@
 //   photo   → file name in assets/thumb + assets/img (no extension)
 //   photos  → extra photos shown on the Programs page
 //   video   → optional file name in assets/video (no extension)
+//   cta     → optional button on the Programs page, e.g. { href: "join.html", label: "Sign up" }
+//   active  → false hides a program everywhere on the site (Programs page, home, footer,
+//             sign-up form) without deleting it. Remove the line to bring it back.
 window.YOT = window.YOT || {};
 
 YOT.programs = [
   {
+    id: "swimming",
+    name: "Swimming with the Iowa City Eels",
+    tagline: "Swim lessons for boys and girls ages 10–18",
+    accent: "sky",
+    photo: "swimming",
+    photos: [],
+    alt: "Two kids swimming in an indoor pool",
+    cta: { href: "join.html?role=swimming#signup", label: "Register for swimming" },
+    about: [
+      "We've partnered with the Iowa City Eels swim club to bring swim lessons to our youth. Boys and girls ages 10 to 18 train with the club's coaches in small groups, three days a week.",
+      "Registration is open now. Sign up through our Get involved page. Each swimmer starts with a tryout, and the club then places them in the right group.",
+    ],
+    looksLike: [
+      "A tryout with the club first; the club assigns each swimmer's group",
+      "Dolphin group: $70/month · Mon, Wed, Thu 5:00–5:30 pm",
+      "Sunfish 2 group: $75/month · Mon, Wed, Thu 5:00–5:30 pm",
+      "Sunfish 1 group: $82/month · Mon, Wed, Thu 5:30–6:15 pm",
+      "Liability insurance: $35 per swimmer, once a year (required for all swimmers)",
+      "The club provides the equipment; each swimmer needs their own fins ($10–12)",
+      "SafeSport training required for parents and for swimmers 12 and older",
+      "Certificates from the club",
+      "Girls are welcome to dress modestly and stay covered",
+      "The club is willing to separate boys and girls",
+    ],
+  },
+  {
     id: "game-nights",
+    active: false,
     name: "Game nights & outings",
     tagline: "Bowling, laser tag, trampolines and more",
     accent: "sun",
@@ -23,6 +53,7 @@ YOT.programs = [
   },
   {
     id: "chess",
+    active: false,
     name: "Chess with Master Ismael Habba",
     tagline: "Weekly chess for beginners and strong players",
     accent: "sky",
@@ -37,6 +68,7 @@ YOT.programs = [
   },
   {
     id: "faith",
+    active: false,
     name: "Faith & Ramadan",
     tagline: "Mosque visits, youth talks and Eid",
     accent: "sun",
@@ -51,6 +83,7 @@ YOT.programs = [
   },
   {
     id: "careers",
+    active: false,
     name: "Careers & workshops",
     tagline: "Interview practice, campus visits and mentors",
     accent: "sky",
@@ -64,6 +97,7 @@ YOT.programs = [
   },
   {
     id: "community",
+    active: false,
     name: "Community & health days",
     tagline: "Potlucks, field games and family afternoons",
     accent: "sun",
@@ -77,3 +111,6 @@ YOT.programs = [
     looksLike: ["Park potlucks with sack races and tug-of-war", "Health checkups with local providers", "Events for every age"],
   },
 ];
+
+// Programs that are running now. The site shows only these.
+YOT.activePrograms = YOT.programs.filter((p) => p.active !== false);

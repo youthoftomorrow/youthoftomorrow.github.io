@@ -104,3 +104,12 @@
 .hours-list li { position: relative; padding-left: 30px; }
 .hours-list li::before { content: ""; position: absolute; left: 0; top: .35em; width: 18px; height: 18px; border-radius: 50%; background: var(--sun) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 6.2l2 2 4-4.4' fill='none' stroke='%230A1A2F' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat; }
 @media (max-width: 700px) { .hours-card { grid-template-columns: 1fr; } }
+
+/* Swimming registration */
+.path-badge { display: inline-block; margin-left: 8px; vertical-align: middle; font: 700 .72rem/1 var(--body); font-style: normal; color: #fff; background: #1E9E5A; padding: 5px 9px; border-radius: 999px; }
+.join-form select {
+  font: 400 var(--step-0)/1.4 var(--body); color: #fff; background: var(--night-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 3l4 4 4-4' fill='none' stroke='%23C8D8EA' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center / 12px;
+  border: 2px solid #23426B; border-radius: var(--radius-sm); padding: 12px 40px 12px 14px; appearance: none; width: 100%;
+}
+.join-form select:focus { outline: none; border-color: var(--sun); }
+.join-form .form-note a { color: var(--gold); }

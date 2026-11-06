@@ -1,14 +1,14 @@
 // Programs page: builds one section per program from js/data/programs.js.
 
-const caption = (f) => (YOT.findPhoto(f) || {}).cap || "";
+const caption = (f, p) => (YOT.findPhoto(f) || {}).cap || (p && p.alt) || "";
 
 /* Jump links */
 $("#jump").innerHTML =
-  YOT.programs.map((p) => `<a class="chip" href="#${p.id}">${esc(p.name)}</a>`).join("") +
+  YOT.activePrograms.map((p) => `<a class="chip" href="#${p.id}">${esc(p.name)}</a>`).join("") +
   `<a class="chip next" href="coming-next.html">Coming next</a>`;
 
 /* Program sections */
-$("#program-sections").innerHTML = YOT.programs
+$("#program-sections").innerHTML = YOT.activePrograms
   .map((p) => {
     const photos = [p.photo, ...p.photos].slice(0, 4);
     const video = p.video && YOT.findVideo(p.video);
@@ -19,13 +19,18 @@ $("#program-sections").innerHTML = YOT.programs
           ${p.about.map((t) => `<p>${esc(t)}</p>`).join("")}
           <h3>What it looks like</h3>
           <ul class="looks">${p.looksLike.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
-          ${video ? `<div class="pd-actions"><button class="btn btn-line" data-video="${video.f}">Watch the video (${video.len})</button></div>` : ""}
+          ${p.cta || video
+            ? `<div class="pd-actions">
+                ${p.cta ? `<a class="btn btn-sun" href="${p.cta.href}">${esc(p.cta.label)}</a>` : ""}
+                ${video ? `<button class="btn btn-line" data-video="${video.f}">Watch the video (${video.len})</button>` : ""}
+              </div>`
+            : ""}
         </div>
         <div class="pd-media">
           ${photos
             .map(
-              (f, i) => `<button data-program="${p.id}" data-i="${i}" aria-label="Open photo: ${esc(caption(f))}">
-                <img src="assets/${i === 0 ? "img" : "thumb"}/${f}.jpg" alt="${esc(caption(f))}" loading="lazy">
+              (f, i) => `<button data-program="${p.id}" data-i="${i}" aria-label="Open photo: ${esc(caption(f, p))}">
+                <img src="assets/${i === 0 ? "img" : "thumb"}/${f}.jpg" alt="${esc(caption(f, p))}" loading="lazy">
               </button>`
             )
             .join("")}
@@ -39,7 +44,7 @@ $("#program-sections").innerHTML = YOT.programs
 $$(".pd-media button").forEach((b) =>
   b.addEventListener("click", () => {
     const p = YOT.programs.find((x) => x.id === b.dataset.program);
-    const items = [p.photo, ...p.photos].slice(0, 4).map((f) => ({ src: `assets/img/${f}.jpg`, cap: caption(f) }));
+    const items = [p.photo, ...p.photos].slice(0, 4).map((f) => ({ src: `assets/img/${f}.jpg`, cap: caption(f, p) }));
     YOT.lightbox.open(items, Number(b.dataset.i));
   })
 );

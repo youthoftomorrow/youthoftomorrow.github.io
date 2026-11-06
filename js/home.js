@@ -31,7 +31,7 @@ $$(".print").forEach((card) => {
 
 /* Program cards, plus a "Coming next" card at the end */
 $("#home-programs").innerHTML =
-  YOT.programs
+  YOT.activePrograms
     .map(
       (p) => `<li class="program-card" style="--accent: var(--${p.accent})">
         <a href="programs.html#${p.id}">

@@ -25,7 +25,7 @@ Every page also loads the shared files:
 
 ## Common edits
 
-- **Add or change a program**: edit `js/data/programs.js`. The Programs page and its buttons, the footer, the home page cards and the sign-up checkboxes all update.
+- **Add or change a program**: edit `js/data/programs.js`. The Programs page and its buttons, the footer, the home page cards and the sign-up checkboxes all update. To pause a program without deleting it, add `active: false` to it; remove that line to bring it back.
 - **Add a future program idea**: edit `js/data/ideas.js`.
 - **Add a photo**: put a large copy in `assets/img/` and a small copy (about 700px wide) in `assets/thumb/` with the same name, then add a line to `js/data/photos.js`.
 - **Add a video**: upload it to YouTube, put a poster image (a still from the video) in `assets/poster/`, then add a line to `js/data/videos.js` with the YouTube ID in `yt` (the part after `/shorts/`, `youtu.be/` or `watch?v=`).
@@ -48,6 +48,6 @@ From Terminal, in this folder, this replaces the old number with a new one in al
 
 - `programs.html#chess`: jump to a program (ids are in `js/data/programs.js`).
 - `moments.html?filter=faith`: open the gallery filtered (`play`, `learn`, `faith`, `community`).
-- `join.html?role=volunteer`: open the sign-up form on a role (`youth`, `youth-volunteer`, `parent`, `volunteer`).
+- `join.html?role=volunteer`: open the sign-up form on a role (`swimming`, `youth`, `youth-volunteer`, `parent`, `volunteer`).
 - `join.html#volunteer-hours`: the volunteer hours certificate card.
 - `join.html?interest=chess`: tick a program on the sign-up form.

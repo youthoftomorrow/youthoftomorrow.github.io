@@ -1,6 +1,6 @@
 // Get involved page: sign-up form that saves to a Google Sheet.
 // Links can pre-fill the form:
-//   join.html?role=volunteer          → picks "I want to help" (youth | youth-volunteer | parent | volunteer)
+//   join.html?role=volunteer          → picks "I want to help" (swimming | youth | youth-volunteer | parent | volunteer)
 //   join.html?interest=chess          → ticks a program (ids from js/data/programs.js)
 //   join.html?ideas=drop-in,council   → lists "Coming next" picks in the message
 
@@ -10,13 +10,14 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycbzEBoYzrU6yMpcWz3CdA6
 /* Program checkboxes */
 $("#interests").insertAdjacentHTML(
   "beforeend",
-  YOT.programs
+  YOT.activePrograms
     .map((p) => `<label><input type="checkbox" name="interests" value="${YOT.esc(p.name)}" data-id="${p.id}">${YOT.esc(p.name)}</label>`)
     .join("")
 );
 
 /* Get involved: role tabs + form */
 const roleTitles = {
+  "Swimming registration": "Register for swimming",
   "Youth member": "Sign up as a youth member",
   "Youth volunteer": "Sign up as a youth volunteer",
   Parent: "Get updates for your family",
@@ -40,13 +41,20 @@ const submitBtn = $("button[type=submit]", form);
 
 // Show only the fields that fit the selected role; hidden fields are disabled so they're skipped.
 function syncRoleFields() {
-  const key = { "Youth member": "youth", "Youth volunteer": "youthvol", Parent: "parent", "Volunteer or mentor": "volunteer" }[$("#role").value];
+  const key = { "Swimming registration": "swim", "Youth member": "youth", "Youth volunteer": "youthvol", Parent: "parent", "Volunteer or mentor": "volunteer" }[$("#role").value];
   $$("[data-for]", form).forEach((el) => {
     const on = el.dataset.for.split(" ").includes(key);
     el.hidden = !on;
-    $$("input, textarea", el).forEach((i) => (i.disabled = !on));
-    if (el.matches("input, textarea")) el.disabled = !on;
+    $$("input, textarea, select", el).forEach((i) => (i.disabled = !on));
+    if (el.matches("input, textarea, select")) el.disabled = !on;
   });
+  // Swimming registration is filled in by a parent, about the swimmer, for ages 10–18.
+  $$("[data-swim]", form).forEach((s) => {
+    if (!s.dataset.default) s.dataset.default = s.textContent;
+    s.textContent = key === "swim" ? s.dataset.swim : s.dataset.default;
+  });
+  $("#age").min = key === "swim" ? 10 : 5;
+  $("#age").max = key === "swim" ? 18 : 25;
 }
 $$(".path").forEach((p) => p.addEventListener("click", syncRoleFields));
 syncRoleFields();
@@ -73,8 +81,12 @@ form.addEventListener("submit", async (e) => {
   const bad = validate();
   if (bad) {
     setStatus(
-      bad.type === "checkbox"
+      bad.name === "swim_ok"
+        ? "Check the box to confirm you understand the swimming fees and requirements."
+        : bad.type === "checkbox"
         ? "Check the box to confirm a parent or guardian knows you're signing up."
+        : bad.name === "age" && $("#role").value === "Swimming registration" && bad.value
+        ? "Swimming is for ages 10 to 18."
         : bad.type === "email" && bad.value
         ? "That email doesn't look complete. Check it and try again."
         : "Fill in the highlighted fields so we can reach you.",
@@ -87,6 +99,13 @@ form.addEventListener("submit", async (e) => {
 
   const data = new FormData(form);
   data.set("interests", data.getAll("interests").join(", "));
+  // The sheet has no swimming columns, so the group and the agreement go in existing ones.
+  if (data.get("role") === "Swimming registration") {
+    data.set("interests", "Swimming (" + data.get("swim_gender") + "), group after tryout");
+    data.set("guardian_ok", "Agreed to swim fees, fins and SafeSport");
+    data.delete("swim_gender");
+    data.delete("swim_ok");
+  }
   data.delete("website");
 
   submitBtn.disabled = true;
@@ -103,7 +122,12 @@ form.addEventListener("submit", async (e) => {
     }
     // The sheet answered but couldn't save: show its reason so it can be fixed.
     if (json.result !== "success") throw new Error(`The sign-up sheet couldn't save this: ${json.error || "unknown error"}`);
-    setStatus(`Thanks, ${data.get("name").split(" ")[0]}! You're signed up — we'll reach out before the next event.`, "ok");
+    setStatus(
+      data.get("role") === "Swimming registration"
+        ? `Thanks! ${data.get("name").split(" ")[0]} is registered for swimming. We'll contact you about the tryout and next steps with the Iowa City Eels.`
+        : `Thanks, ${data.get("name").split(" ")[0]}! You're signed up — we'll reach out before the next event.`,
+      "ok"
+    );
     form.reset();
     $("#role").value = $(".path.is-on").dataset.role;
     syncRoleFields();
@@ -123,7 +147,7 @@ form.addEventListener("submit", async (e) => {
 
 /* Pre-fill from the link */
 const params = new URLSearchParams(location.search);
-const roleParam = { youth: "Youth member", "youth-volunteer": "Youth volunteer", parent: "Parent", volunteer: "Volunteer or mentor" }[params.get("role")];
+const roleParam = { swimming: "Swimming registration", youth: "Youth member", "youth-volunteer": "Youth volunteer", parent: "Parent", volunteer: "Volunteer or mentor" }[params.get("role")];
 if (roleParam) $(`.path[data-role="${roleParam}"]`).click();
 
 // "Sign up as a youth volunteer" on this page picks that option and scrolls up to the form.

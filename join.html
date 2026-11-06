@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css?v=20261125">
-  <link rel="stylesheet" href="css/join.css?v=20261125">
+  <link rel="stylesheet" href="css/base.css?v=20261128">
+  <link rel="stylesheet" href="css/join.css?v=20261128">
 </head>
 <body data-page="join">
   <a class="skip" href="#main">Skip to content</a>
@@ -32,8 +32,11 @@
           <h2 id="join-title">Come be part of tomorrow.</h2>
           <p>Pick the option that fits you. We'll reach out before the next event.</p>
           <div class="paths" role="tablist" aria-label="How do you want to get involved?">
-            <button role="tab" class="path is-on" aria-selected="true" data-role="Youth member">
-              <strong>I'm a young person</strong><span>Sign up for game nights, chess and trips.</span>
+            <button role="tab" class="path path-swim is-on" aria-selected="true" data-role="Swimming registration">
+              <strong>Register for swimming <em class="path-badge">Open now</em></strong><span>Swim lessons with the Iowa City Eels for boys and girls ages 10–18.</span>
+            </button>
+            <button role="tab" class="path" aria-selected="false" data-role="Youth member">
+              <strong>I'm a young person</strong><span>Join us and hear first about new programs and events.</span>
             </button>
             <button role="tab" class="path" aria-selected="false" data-role="Youth volunteer">
               <strong>I'm a teen who wants to volunteer</strong><span>Help at our events and earn a certificate for your hours.</span>
@@ -51,24 +54,36 @@
           </div>
         </div>
         <form class="join-form" id="join-form" novalidate>
-          <h3 id="form-title">Sign up as a youth member</h3>
-          <input type="hidden" name="role" id="role" value="Youth member">
+          <h3 id="form-title">Register for swimming</h3>
+          <input type="hidden" name="role" id="role" value="Swimming registration">
           <!-- Spam trap: real people never see or fill this field -->
           <label class="trap" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
 
-          <label>Full name<input name="name" autocomplete="name" required></label>
+          <p class="form-note" data-for="swim">With the Iowa City Eels swim club. A parent or guardian should fill this in. See <a href="events.html#swimming">groups, fees and requirements</a>.</p>
+
+          <!-- data-swim: the label text shown when "Register for swimming" is picked -->
+          <label><span data-swim="Swimmer's full name">Full name</span><input name="name" autocomplete="name" required></label>
           <div class="row">
-            <label>Email<input name="email" type="email" autocomplete="email" required></label>
-            <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+            <label><span data-swim="Parent's email">Email</span><input name="email" type="email" autocomplete="email" required></label>
+            <label><span data-swim="Parent's phone">Phone</span><input name="phone" type="tel" autocomplete="tel" required></label>
           </div>
 
           <p class="form-note" data-for="youthvol">We keep track of your hours and give you a signed certificate you can use for high school service hours and college applications.</p>
 
-          <div class="row" data-for="youth youthvol">
-            <label>Age<input name="age" type="number" min="5" max="25" inputmode="numeric" required></label>
+          <div class="row" data-for="youth youthvol swim">
+            <label><span data-swim="Swimmer's age (10–18)">Age</span><input name="age" id="age" type="number" min="5" max="25" inputmode="numeric" required></label>
             <label>Parent or guardian name<input name="guardian_name" required></label>
           </div>
           <label data-for="youth youthvol">Parent or guardian phone<input name="guardian_phone" type="tel" required></label>
+
+          <label data-for="swim">Swimmer is a
+            <select name="swim_gender" required>
+              <option value="">Choose…</option>
+              <option>Boy</option>
+              <option>Girl</option>
+            </select>
+          </label>
+          <p class="form-note" data-for="swim">No need to pick a group: the Iowa City Eels place each swimmer in a group after a tryout.</p>
 
           <label data-for="parent">Children's names and ages<input name="children" placeholder="e.g. Amir 12, Sara 14" required></label>
 
@@ -83,6 +98,7 @@
           <label><span>Message <span class="opt">(optional)</span></span><textarea name="message" id="message" rows="3" placeholder="Questions, allergies, anything we should know…"></textarea></label>
 
           <label class="check" data-for="youth youthvol"><input type="checkbox" name="guardian_ok" value="Yes" required>My parent or guardian knows I'm signing up.</label>
+          <label class="check" data-for="swim"><input type="checkbox" name="swim_ok" value="Yes" required>I understand the $35 yearly liability insurance, the monthly fee for the group the club places my swimmer in after the tryout, that my swimmer needs fins ($10–12), and that SafeSport training is required for parents and swimmers 12 and older.</label>
 
           <button class="btn btn-sun" type="submit">Send sign-up</button>
           <p class="form-status" id="form-status" role="status"></p>
@@ -156,9 +172,9 @@
 
   <footer class="site-footer" id="site-footer"></footer>
 
-  <script src="js/data/programs.js?v=20261125"></script>
-  <script src="js/data/ideas.js?v=20261125"></script>
-  <script src="js/site.js?v=20261125"></script>
-  <script src="js/join.js?v=20261125"></script>
+  <script src="js/data/programs.js?v=20261128"></script>
+  <script src="js/data/ideas.js?v=20261128"></script>
+  <script src="js/site.js?v=20261128"></script>
+  <script src="js/join.js?v=20261128"></script>
 </body>
 </html>

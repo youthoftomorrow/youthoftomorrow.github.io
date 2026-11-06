@@ -60,7 +60,7 @@ function headerHTML() {
 
 /* ---------- Footer ---------- */
 function footerHTML() {
-  const programs = (YOT.programs || []).map((p) => `<li><a href="programs.html#${p.id}">${esc(p.name)}</a></li>`).join("");
+  const programs = (YOT.activePrograms || []).map((p) => `<li><a href="programs.html#${p.id}">${esc(p.name)}</a></li>`).join("");
   return `<div class="wrap footer-grid">
       <div>
         <img class="footer-logo" src="assets/img/logo-sm.png" alt="Youth of Tomorrow" width="170">
