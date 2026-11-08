@@ -113,3 +113,4 @@
 }
 .join-form select:focus { outline: none; border-color: var(--sun); }
 .join-form .form-note a { color: var(--gold); }
+.path[hidden] { display: none; }

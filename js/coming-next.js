@@ -44,7 +44,7 @@ function syncTray() {
   tray.classList.toggle("is-shown", n > 0);
   document.body.classList.toggle("has-tray", n > 0);
   $("#tray-count").textContent = `You picked ${n} idea${n === 1 ? "" : "s"}`;
-  $("#tray-send").href = `join.html?ideas=${encodeURIComponent(picks.join(","))}`;
+  $("#tray-send").href = `join.html?ideas=${encodeURIComponent(picks.join(","))}#suggest`;
 }
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".pick");

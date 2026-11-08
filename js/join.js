@@ -2,7 +2,8 @@
 // Links can pre-fill the form:
 //   join.html?role=volunteer          → picks "I want to help" (swimming | youth | youth-volunteer | parent | volunteer)
 //   join.html?interest=chess          → ticks a program (ids from js/data/programs.js)
-//   join.html?ideas=drop-in,council   → lists "Coming next" picks in the message
+//   join.html?ideas=drop-in,council   → lists "Coming next" picks in the suggestion box
+// A role whose option is paused (hidden in join.html) is ignored, so the form stays on swimming.
 
 // Google Sheets endpoint: paste the Web app URL from Apps Script here (see google-apps-script.gs).
 const SHEET_URL = "https://script.google.com/macros/s/AKfycbzEBoYzrU6yMpcWz3CdA6v_CRrtJI3gc1eFZ5T49rEM_HDeRHi_ZyaSapaeTND7xJC7/exec";
@@ -148,7 +149,8 @@ form.addEventListener("submit", async (e) => {
 /* Pre-fill from the link */
 const params = new URLSearchParams(location.search);
 const roleParam = { swimming: "Swimming registration", youth: "Youth member", "youth-volunteer": "Youth volunteer", parent: "Parent", volunteer: "Volunteer or mentor" }[params.get("role")];
-if (roleParam) $(`.path[data-role="${roleParam}"]`).click();
+const roleTab = roleParam && $(`.path[data-role="${roleParam}"]`);
+if (roleTab && !roleTab.hidden) roleTab.click();
 
 // "Sign up as a youth volunteer" on this page picks that option and scrolls up to the form.
 $$("[data-pick-role]").forEach((a) =>
@@ -168,7 +170,8 @@ const ideas = (params.get("ideas") || "")
   .map((id) => (YOT.ideas || []).find((i) => i.id === id))
   .filter(Boolean);
 if (ideas.length) {
-  $("#message").value = `New programs I'd join: ${ideas.map((i) => i.name).join(", ")}.`;
+  $("#suggest-form").elements.suggestion.value = `New programs I'd join: ${ideas.map((i) => i.name).join(", ")}.`;
+  $("#suggest-form").elements.topic.value = "A new program or activity";
 }
 
 /* Suggestions form: saved to the "Suggestions" tab of the same Google Sheet. */
