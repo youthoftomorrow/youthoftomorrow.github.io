@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flyers &amp; brochures · Youth of Tomorrow</title>
+  <meta name="description" content="Download Youth of Tomorrow flyers and brochures in English and Arabic.">
+  <link rel="icon" href="../assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;600;700&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Downloads page for the printable flyers and brochures in this folder. */
+    :root { --night: #0A1A2F; --sky: #007FC9; --sky-soft: #E6F2FB; --sun: #FF8F10; --gold: #FFC845; --ink: #0F2138; --ink-soft: #46586F; --line: #D7E3EF; }
+    * { box-sizing: border-box; margin: 0; }
+    body { font: 400 1rem/1.5 "Figtree", system-ui, sans-serif; color: var(--ink); background: #F5F9FD; }
+    header { background: var(--night); color: #fff; padding: 28px 16px 36px; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; font: 800 1.15rem/1 "Bricolage Grotesque", sans-serif; }
+    .brand img { width: 38px; }
+    h1 { font: 800 clamp(2rem, 6vw, 3rem)/1.05 "Bricolage Grotesque", sans-serif; margin-top: 28px; }
+    header p { color: #C8D8EA; margin-top: 8px; max-width: 60ch; }
+    main { padding: 36px 0 56px; }
+    h2 { font: 800 1.4rem/1.2 "Bricolage Grotesque", sans-serif; margin: 28px 0 12px; }
+    h2:first-child { margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 12px; }
+    a.card { display: grid; gap: 4px; padding: 16px 18px; background: #fff; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: inherit; border-top: 4px solid var(--sky); transition: transform .15s, box-shadow .15s; }
+    a.card:nth-child(2n) { border-top-color: var(--sun); }
+    a.card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -18px rgba(10,26,47,.6); }
+    a.card b { font: 700 1.05rem/1.25 "Bricolage Grotesque", sans-serif; }
+    a.card b[lang="ar"] { font-family: "Reem Kufi", sans-serif; }
+    a.card span { font-size: .88rem; color: var(--ink-soft); }
+    a.card em { font-style: normal; font-weight: 700; font-size: .8rem; color: var(--sky); }
+    .note { margin-top: 32px; font-size: .9rem; color: var(--ink-soft); background: var(--sky-soft); border-radius: 12px; padding: 14px 16px; }
+    .back { display: inline-block; margin-top: 24px; color: var(--sky); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="../index.html"><img src="../assets/img/logo-mark.png" alt="">Youth of Tomorrow</a>
+      <h1>Flyers &amp; brochures</h1>
+      <p>Print-ready PDFs in English and Arabic. Share them, post them, or print them for your school, mosque or community center.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <h2>About Youth of Tomorrow</h2>
+    <div class="grid">
+      <a class="card" href="about-flyer-en.pdf"><b>Flyer</b><span>Mission, vision, goals and how to get involved · 1 page</span><em>English · PDF</em></a>
+      <a class="card" href="about-flyer-ar.pdf"><b lang="ar" dir="rtl">نشرة تعريفية</b><span>Mission, vision, goals and how to get involved · 1 page</span><em>العربية · PDF</em></a>
+      <a class="card" href="about-brochure-en.pdf"><b>Tri-fold brochure</b><span>Who we are, our goals and what we do · print both sides</span><em>English · PDF</em></a>
+      <a class="card" href="about-brochure-ar.pdf"><b lang="ar" dir="rtl">مطوية تعريفية</b><span>Who we are, our goals and what we do · print both sides</span><em>العربية · PDF</em></a>
+    </div>
+
+    <h2>Swimming with the Iowa City Eels</h2>
+    <div class="grid">
+      <a class="card" href="flyer-en.pdf"><b>Swimming flyer</b><span>Groups, fees, requirements and how to register · 1 page</span><em>English · PDF</em></a>
+      <a class="card" href="flyer-ar.pdf"><b lang="ar" dir="rtl">نشرة السباحة</b><span>Groups, fees, requirements and how to register · 1 page</span><em>العربية · PDF</em></a>
+      <a class="card" href="brochure-en.pdf"><b>Swimming brochure</b><span>About us plus the swimming program · print both sides</span><em>English · PDF</em></a>
+      <a class="card" href="brochure-ar.pdf"><b lang="ar" dir="rtl">مطوية السباحة</b><span>About us plus the swimming program · print both sides</span><em>العربية · PDF</em></a>
+    </div>
+
+    <p class="note">Printing a brochure: print on both sides with "flip on short edge", then fold in three.</p>
+    <a class="back" href="../index.html">← Back to the website</a>
+  </main>
+</body>
+</html>
